@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Whatever</title>
+    <%= csrf_meta_tags %>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Raleway:300,300i,400,400i,500,600,700,900" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
