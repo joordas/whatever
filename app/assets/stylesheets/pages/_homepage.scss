@@ -1,7 +1,20 @@
-@import "../variables";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 body {
   background-color: white;
-  overflow: hidden;
+  overflow-x: hidden;
+  background-image: url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?dpr=1&auto=format&fit=crop&w=1950&h=&q=60&cs=tinysrgb&crop=");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: -100;
 }
 
 .flex-center {
@@ -21,6 +34,7 @@ body {
 
 .header {
   font-weight: bold;
+  font-family: "Raleway", sans-serif;
   margin: 0;
 }
 
@@ -34,16 +48,17 @@ body {
     max-width: 30vw;
     font-family: "Raleway", sans-serif;
     font-weight: 800;
-    color: $accent;
+    color: white;
     letter-spacing: 5px;
+    line-height: 1.5;
   }
   h3 {
     font-weight: 300;
     font-size: 4em;
     margin-top: 30px;
-    color: #82b1ff;
+    color: $green;
     font-family: "Open Sans Condensed";
-    letter-spacing: 4px;
+    letter-spacing: 18px;
   }
 }
 
@@ -53,7 +68,9 @@ body::after {
   position: absolute;
   top: 0;
   left: -1250px;
-  background-color: #2979ff23;
+  background: linear-gradient(-90deg, transparentize(#ffa751, 0.2), #ffe259);
+  background: linear-gradient(-90deg, #ff9966 10%, #ff5e62);
+  background: linear-gradient(90deg, #2bc0e4 50%, transparentize(#eaecc6, 0.1));
   width: 2500px;
   height: 2500px;
   transform: rotate(45deg);
@@ -66,29 +83,52 @@ body::before {
   position: absolute;
   top: 0;
   right: -2000px;
-  background-color: #2f78ffdd;
+  background: linear-gradient(135deg, transparentize(#ff8008, 0.05)5%, #ffc837);
   width: 2500px;
   height: 2500px;
   transform: rotate(45deg);
   z-index: -9;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  // filter: hue-rotate(25deg);
+  background-blend-mode: multiply;
 }
 .search-address-bar {
   margin-top: 100px;
+  z-index: 10;
   p {
     font-size: 1.8em;
     text-transform: uppercase;
-    color: $accent;
+    color: white;
   }
   input {
     border: none;
     background-color: transparent;
+    padding: 5px;
+    // border-radius: 999em;
     border-bottom: 1px solid $accent;
-    width: 40%;
+    // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    min-width: 600px;
+    font-size: 3em;
+    z-index: 10;
+
+    color: complement($accent);
     &:focus {
+      z-index: 10;
       outline: none;
     }
     &::placeholder {
+      z-index: 10;
+      color: $accent;
     }
   }
+}
+
+.homepage-panel {
+  background-color: white;
+  width: calc(100vw - (2*20px));
+  margin: 0 auto;
+  height: 100vh; // temporary
+  border-radius: 10px;
+  margin-top: 50px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
 }
